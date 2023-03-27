@@ -8,7 +8,7 @@ function App() {
 
   const double = useMemo(() => {
     return 2 * (count as number);
-  }, []);
+  }, [count]);
 
   return (
     <div className='App'>
