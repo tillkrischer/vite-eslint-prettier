@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -6,13 +6,18 @@ import './App.css';
 function App() {
   const [count, setCount] = useState(0);
 
+  const double = useMemo(() => {
+    return 2 * (count as number);
+  }, []);
+
   return (
     <div className='App'>
+      {double}
       <div>
-        <a href='https://vitejs.dev' target='_blank'>
+        <a href='https://vitejs.dev' target='_blank' rel='noreferrer'>
           <img src={viteLogo} className='logo' alt='Vite logo' />
         </a>
-        <a href='https://reactjs.org' target='_blank'>
+        <a href='https://reactjs.org' target='_blank' rel='noreferrer'>
           <img
             src={reactLogo}
             className='logo react'
